@@ -21,8 +21,8 @@ Class SignUpController
 
 			if (strlen($username) < 3)
 				$error = "username_length";
-			else if (strlen($email) < 4)
-				$error = "email_length";
+			else if (!filter_var($email, FILTER_VALIDATE_EMAIL))
+				$error = "email_syntax";
 			else if (!(preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/', $password)))
 				$error = "password_syntax";
 			else if ($confirm != $password)

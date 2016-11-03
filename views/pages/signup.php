@@ -5,7 +5,7 @@
         $errorMessage = "";
         if ($error == 'username_length')
             $errorMessage = "Username must be at least 3 characters";
-        else if ($error == "email_length")
+        else if ($error == "email_syntax")
             $errorMessage = "Please enter a valid email address";
         else if ($error == "password_syntax")
             $errorMessage = "Password must be at least 8 characters; and must include at least one lower case letter, one upper case later and one number";

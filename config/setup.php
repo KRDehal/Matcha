@@ -57,9 +57,9 @@ $conn->query($pdo_table_create);
 $pdo_table_create = "CREATE TABLE IF NOT EXISTS user_connections(
 					id INT AUTO_INCREMENT NOT NULL,
 					userId INT NOT NULL,
-					longitude DECIMAL(3,6) NOT NULL,
-					latitude DECIMAL(3,6) NOT NULL,
-					lastOnline DATETIME DEFAULT(GETDATE()) NOT NULL,
+					longitude VARCHAR(124) NOT NULL,
+					latitude VARCHAR(124) NOT NULL,
+					lastOnline DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
 					PRIMARY KEY (id)
 					);";
 
@@ -78,6 +78,6 @@ $conn->query($pdo_db_create);
 $conn->query("USE $DB_NAME");
 $conn->query($pdo_table_create);
 
-echo "Tables successfully created";
+echo "Tables successfully created\n";
 
 ?>

@@ -5,8 +5,10 @@ Class ResetModel
 	public static function mail($email)
 	{
 		$db = Db::getConnect()->getInstance();
-		$query_match = $db->prepare("SELECT id FROM users WHERE email = :email AND protect = '1';");
+		$protect = "1";
+		$query_match = $db->prepare("SELECT id FROM users WHERE email = :email AND protect = :protect;");
 		$query_match->bindParam(":email", $email);
+		$query_match->bindParam(":protect", $protect);
 		$query_match->execute();
 		$ret = $query_match->fetch();
 

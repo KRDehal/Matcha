@@ -13,9 +13,9 @@ Class SignUpModel
 			return 0;
 		else
 		{
-			$hash = hash("whirlpool", "dkrusche".$password);
+			$hash = hash("whirlpool", "wethinkcode".$password);
 			$gen = rand(0, 9999999);
-			$protect = hash('whirlpool', "dkrusche".$gen);
+			$protect = hash('whirlpool', "wethinkcode".$gen);
 			$query_insert = $db->prepare("INSERT INTO users (firstName, lastName,  username, email, password, protect) VALUES (:firstname, :lastname, :username, :email, :password, :protect);");
 			$query_insert->execute(array('firstname' => $firstname, 'lastname' => $lastname, 'username' => $username, 'email' => $email, 'password' => $hash, 'protect' => $protect));
 			

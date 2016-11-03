@@ -8,7 +8,6 @@ Class ResetModel
 		$query_match = $db->prepare("SELECT id FROM users WHERE email = :email AND protect = '1';");
 		$query_match->bindParam(":email", $email);
 		$query_match->execute();
-		//$query_match->execute(array('email' => $email));
 		$ret = $query_match->fetch();
 
 		if (empty($ret))
@@ -16,18 +15,18 @@ Class ResetModel
 		else
 		{
 			$gen = rand(0, 9999999);
-			$reset = hash('whirlpool', "dkrusche".$gen);
+			$reset = hash('whirlpool', "wethinkcode".$gen);
 			$query_update = $db->prepare("UPDATE users SET reset = :reset WHERE email = :email;");
 			$query_update->bindParam(":reset", $reset);
 			$query_update->bindParam(":email", $email);
 			$query_update->execute();
-			//$query_insert->execute(array('reset' => $reset));
 			
 			$from = "From: noreply@matcha.co.za"."\r\n";
 			$subject = "Matcha: Password Reset";
 			$url = "http://localhost:8080/Matcha/index.php?controller=reset&action=verify&reset=".$reset;
-			$message = "Hi there,\n\nPlease click on the following link to reset your password:\n".$url;
+			$message = "Hi there,\n\nPlease click on the following link to reset your password:\n".$url."\n\nRegards,\n\nThe Matcha Team";
 			mail($email, $subject, $message, $from);
+			echo "<script>alert('Account located, please check your email for a reset link.');</script>";
 			return 1;
 		}
 	}
@@ -38,7 +37,6 @@ Class ResetModel
 		$query_match = $db->prepare("SELECT id FROM users WHERE reset = :reset;");
 		$query_match->bindParam(":reset", $reset);
 		$query_match->execute();
-		//$query_match->execute(array('reset' => $reset));
 		$ret = $query_match->fetch();
 
 		if (empty($ret))

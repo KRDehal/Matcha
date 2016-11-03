@@ -30,7 +30,7 @@ Class SignUpModel
 			$from = "From: noreply@matcha.co.za"."\r\n";
 			$subject = "Matcha: Account Verification";
 			$url = "http://localhost:8080/Matcha/index.php?controller=signup&action=verify&protect=".$protect;
-			$message = "Hi there,\n\nYou have succesfully created an account, please click on the following link to verify: ".$url."\n\nRegards,\n\nThe Matcha Team";
+			$message = "Hi there,\n\nYou have succesfully created an account, please click on the following link to verify:\n".$url."\n\nRegards,\n\nThe Matcha Team";
 			mail($email, $subject, $message, $from);
 			echo "<script>alert('Account succesfully created, please check your email for varification purposes.');</script>";
 			return 1;

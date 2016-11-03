@@ -20,10 +20,11 @@ Class SignUpModel
 			$query_insert->execute(array('firstname' => $firstname, 'lastname' => $lastname, 'username' => $username, 'email' => $email, 'password' => $hash, 'protect' => $protect));
 			
 			$from = "From: noreply@matcha.co.za"."\r\n";
-			$subject = "Account Verification";
+			$subject = "Matcha: Account Verification";
 			$url = "http://localhost:8080/Matcha/index.php?controller=signup&action=verify&protect=".$protect;
-			$message = "Hi there,\n\nYou have succesfully created an account, please click on the following link to verify:\n".$url;
+			$message = "Hi there,\n\nYou have succesfully created an account, please click on the following link to verify: ".$url."\n\nRegards,\n\nThe Matcha Team";
 			mail($email, $subject, $message, $from);
+			echo "<script>alert('Account succesfully created, please check your email for varification purposes.');</script>";
 			return 1;
 		}
 	}

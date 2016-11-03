@@ -33,7 +33,7 @@
 
 <FOOTER>
 <HR />
-	<P>&#169 dkrusche, vgovende and kioulian 2016</P>
+	<P>&#169 dkrusche, vgovende & kioulian 2016</P>
 </FOOTER>
 </BODY>
 </HTML>

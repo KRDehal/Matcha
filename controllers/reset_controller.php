@@ -51,7 +51,7 @@ Class ResetController
 			$password = $_POST['password'];
 			$confirm = $_POST['confirm'];
 
-			if (!(preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z]{8}$/', $password)))
+			if (!(preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/', $password)))
 					$error = "password_syntax";
 			else if ($confirm != $password)
 					$error = "confirm";

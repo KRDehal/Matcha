@@ -4,7 +4,7 @@
 	<?PHP
         $errorMessage = "";
         if ($error == "password_syntax")
-            $errorMessage = "Password must be at least 8 characters; and must contain at least one lower case letter, one upper case later and one number";
+            $errorMessage = "Password must be at least 8 characters; and must include at least one lower case letter, one upper case later and one number";
         else if ($error == "confirm")
             $errorMessage = "Passwords do not match";
         if ($error == 'incorrect')

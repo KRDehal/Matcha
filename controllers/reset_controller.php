@@ -66,6 +66,7 @@ Class ResetController
 				$query_update->bindParam(":id", $id);
 				$query_update->execute();
 				echo "<script>alert('Your password has been reset successfully, please sign in.');</script>";
+				header("refresh:1; url='index.php?controller=validate&action=login'");
 			}
 			else
 				$error = "incorrect";

@@ -23,6 +23,7 @@
 		else
 		{
 	?>
+			<a href="index.php?controller=profile&action=show">My Profile</a>
 			<a href="index.php?controller=validate&action=logout">Sign Out</a>
 	<?PHP
 		}

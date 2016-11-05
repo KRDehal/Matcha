@@ -8,6 +8,9 @@ require_once('config/database.php');
 
 $root = $_SERVER['DOCUMENT_ROOT'];
 
+$location = file_get_contents('http://freegeoip.net/json/'.$_SERVER['REMOTE_ADDR']);
+print_r($_SERVER);
+
 if (!isset($_SESSION["logged_on_user"]))
 	$_SESSION["logged_on_user"] = "";
 

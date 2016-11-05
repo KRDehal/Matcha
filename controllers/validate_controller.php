@@ -9,7 +9,7 @@ Class ValidateController
 		if (!empty($_POST))
 		{
 			$login = $_POST['login'];
-			$hash = hash("whirlpool", "dkrusche".$_POST['password']);
+			$hash = hash("whirlpool", "wethinkcode".$_POST['password']);
 			$id = ValidateModel::check($login, $hash);
 			if ($id != 0)
 			{

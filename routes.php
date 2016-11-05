@@ -28,7 +28,8 @@ function call($controller, $action)
 $controllers = array('pages' => ['home', 'error'],
 					'signup' => ['show', 'verify'],
 					'validate' => ['login', 'logout'],
-					'reset' => ['fpass', 'verify', 'npass']);
+					'reset' => ['fpass', 'verify', 'npass'],
+					'profile' => ['show']);
 
 if (array_key_exists($controller, $controllers))
 {

@@ -4,7 +4,7 @@ $DB_HOST = '127.0.0.1';
 $DB_NAME = 'db_matcha';
 $DB_DSN = 'mysql:host='.$DB_HOST;
 $DB_USER = 'root';
-$DB_PASSWORD = 'dc06148b';
+$DB_PASSWORD = '15891589';
 
 class Db
 {
@@ -28,7 +28,7 @@ class Db
 		$DB_NAME = 'db_matcha';
 		$DB_DSN = 'mysql:host='.$DB_HOST.';dbname='.$DB_NAME;
 		$DB_USER = 'root';
-		$DB_PASSWORD = 'dc06148b';
+		$DB_PASSWORD = '15891589';
 		if (!isset(self::$instance))
 		{
 			$pdo_options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;

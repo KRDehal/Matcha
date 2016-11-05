@@ -20,6 +20,8 @@ function call($controller, $action)
 			require_once('models/reset_model.php');
 			$controller = new ResetController();
 			break;
+		case 'profile':
+			$controller = new ProfileController();
 	}
 
 	$controller->{ $action }();

@@ -12,6 +12,14 @@ body {
 	padding: 0px;
 	font-family: 'Open Sans', sans-serif;
 	text-align: center;
+	/*background: black url(https://wallpaperscraft.com/image/dating_online_arm_flowers_bouquet_laptop_woman_77423_3840x2160.jpg);
+	background-size: cover;*/
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
 }
 
 input[type="text"], input[type="password"] {

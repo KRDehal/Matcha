@@ -59,7 +59,7 @@ Class ResetController
 			$id = ResetModel::check($login);
 			if ($id != 0)
 			{
-				$hash = hash("whirlpool", "dkrusche".$password);
+				$hash = hash("whirlpool", "wethinkcode".$password);
 				$db = Db::getConnect()->getInstance();
 				$query_update = $db->prepare("UPDATE users SET password = :hash WHERE id = :id;");
 				$query_update->bindParam(":hash", $hash);

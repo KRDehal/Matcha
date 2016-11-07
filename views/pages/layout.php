@@ -10,7 +10,6 @@
 </HEAD>
 <BODY>
 <HEADER>
-			<a href="index.php?controller=pages&action=home">Home</a>
 	<?PHP
 		if (!isset($_SESSION["logged_on_user"]) || $_SESSION["logged_on_user"] == "")
 		{
@@ -23,7 +22,7 @@
 		else
 		{
 	?>
-			<a href="index.php?controller=profile&action=show">My Profile</a>
+			<a href="index.php?controller=pages&action=home">Home</a>
 			<a href="index.php?controller=validate&action=logout">Sign Out</a>
 	<?PHP
 		}
@@ -34,7 +33,7 @@
 
 <FOOTER>
 <HR />
-	<P>&#169 dkrusche, vgovende & kioulian 2016</P>
+	<P>&#169 The Matcha Team 2016</P>
 </FOOTER>
 </BODY>
 </HTML>

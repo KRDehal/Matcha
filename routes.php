@@ -20,18 +20,15 @@ function call($controller, $action)
 			require_once('models/reset_model.php');
 			$controller = new ResetController();
 			break;
-		case 'profile':
-			$controller = new ProfileController();
 	}
 
 	$controller->{ $action }();
 }
 
-$controllers = array('pages' => ['home', 'error'],
+$controllers = array('pages' => ['home', 'landing', 'error'],
 					'signup' => ['show', 'verify'],
 					'validate' => ['login', 'logout'],
-					'reset' => ['fpass', 'verify', 'npass'],
-					'profile' => ['show']);
+					'reset' => ['fpass', 'verify', 'npass']);
 
 if (array_key_exists($controller, $controllers))
 {

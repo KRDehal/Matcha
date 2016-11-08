@@ -30,7 +30,7 @@ Class SignUpController
 			else if ($this->_check($firstname, $lastname, $username, $email, $password) == False)
 				$error = "mismatch";
 		}
-		require_once('Views/Pages/signup.php');
+		require_once('views/pages/signup.php');
 	}
 
 	private function _check($firstname, $lastname, $username, $email, $password)

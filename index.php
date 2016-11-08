@@ -22,6 +22,9 @@ else
 	$action = 'landing';
 }
 
-require_once('views/pages/layout.php');
+if (isset($_GET['controller']) && isset($_GET['action']) && $_GET['action'] == 'chat')
+	require_once('views/pages/chat.php');
+else
+	require_once('views/pages/layout.php');
 										
 ?>

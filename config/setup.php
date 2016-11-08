@@ -67,6 +67,26 @@ $conn->query($pdo_db_create);
 $conn->query("USE $DB_NAME");
 $conn->query($pdo_table_create);
 
+$pdo_table_create = "SET SQL_MODE = 'NO_AUTO_VALUE_ON_ZERO',
+					SET time_zone = '+00:00';";
+
+$conn->query($pdo_db_create);
+$conn->query("USE $DB_NAME");
+$conn->query($pdo_table_create);
+
+$pdo_table_create = "CREATE TABLE IF NOT EXISTS user_chats(
+					id INT AUTO_INCREMENT NOT NULL,
+                    chatId INT NOT NULL,
+                    username VARCHAR(250) NOT NULL,
+                    postedOn DATETIME NOT NULL,
+                    message TEXT NOT NULL,
+                    PRIMARY KEY (id)
+                    );";
+
+$conn->query($pdo_db_create);
+$conn->query("USE $DB_NAME");
+$conn->query($pdo_table_create);
+
 $pdo_table_create = "CREATE TABLE IF NOT EXISTS likes(
 					id INT AUTO_INCREMENT NOT NULL,
 					userId INT NOT NULL,

@@ -23,6 +23,7 @@
 		{
 	?>
 			<a href="index.php?controller=pages&action=home">Home</a>
+			<a href="index.php?controller=pages&action=chat">Chat</a>
 			<a href="index.php?controller=validate&action=logout">Sign Out</a>
 	<?PHP
 		}

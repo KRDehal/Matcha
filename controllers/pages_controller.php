@@ -1,5 +1,6 @@
 <?PHP
-class PagesController
+
+Class PagesController
 {
 	public function home()
 	{	
@@ -9,9 +10,14 @@ class PagesController
 	{
 		require_once('views/pages/landing.php');
 	}
+	public function chat()
+	{
+		require_once('views/pages/chat.php');
+	}
 	public function error()
 	{
 		require_once('views/pages/error.php');
 	}
 }
+
 ?>

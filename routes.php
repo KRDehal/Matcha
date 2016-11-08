@@ -25,7 +25,7 @@ function call($controller, $action)
 	$controller->{ $action }();
 }
 
-$controllers = array('pages' => ['home', 'landing', 'error'],
+$controllers = array('pages' => ['home', 'landing', 'chat', 'error'],
 					'signup' => ['show', 'verify'],
 					'validate' => ['login', 'logout'],
 					'reset' => ['fpass', 'verify', 'npass']);

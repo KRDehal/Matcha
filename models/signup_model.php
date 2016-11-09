@@ -33,6 +33,7 @@ Class SignUpModel
 			$message = "Hi there,\n\nYou have succesfully created an account, please click on the following link to verify:\n".$url."\n\nRegards,\n\nThe Matcha Team";
 			mail($email, $subject, $message, $from);
 			echo "<script>alert('Account succesfully created, please check your email for verification purposes.');</script>";
+			header("refresh:1; url=index.php?controller=pages&action=landing");
 			return 1;
 		}
 	}

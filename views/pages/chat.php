@@ -1,4 +1,5 @@
- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?PHP $userName = $_SESSION["userName"] ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <HEAD>
 	<TITLE>Matcha</TITLE>
@@ -40,7 +41,7 @@
 	</TR>
 </TABLE>
 <div align="center">
-	<input type="text" id="userName" maxlength="10" size="10" onblur="checkUsername();"/>
+	<input type="text" value="<?PHP echo $userName ?>" id="userName" style="display: none;" />
 	<input type="text" id="messageBox" maxlength="2000" size="50" onkeydown="handleKey(event)"/>
 	<input type="button" value="Send" onclick="sendMessage();" />
 	<input type="button" value="Delete All" onclick="deleteMessages();" />

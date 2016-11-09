@@ -14,6 +14,7 @@ Class ValidateController
 			if ($id != 0)
 			{
 				$_SESSION["logged_on_user"] = $id;
+				$_SESSION["userName"] = $userName;
 				header('Location: index.php?controller=pages&action=home');
 			}
 			$error = "incorrect";

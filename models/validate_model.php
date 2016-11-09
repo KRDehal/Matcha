@@ -6,7 +6,7 @@ Class ValidateModel
 	{
 		$db = Db::getConnect()->getInstance();
 		$protect = "1";
-		$query_match = $db->prepare('SELECT id FROM users WHERE (username = :login OR email = :login) AND password = :hash AND protect = :protect;');
+		$query_match = $db->prepare('SELECT id FROM users WHERE username = :login AND password = :hash AND protect = :protect;');
 		$query_match->bindParam(":login", $login);
 		$query_match->bindParam(":hash", $hash);
 		$query_match->bindParam(":protect", $protect);

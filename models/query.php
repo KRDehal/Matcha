@@ -1,0 +1,2 @@
+$query = "SELECT id, username, matchName, message, DATE_FORMAT(postedOn, '%Y-%m-%d %H:%i:%s') AS postedOn from user_chats
+        WHERE (username = " . $_SESSION['userName'] . " AND matchName = " . $match . ") OR (username = " . $match . " AND matchName = " . $_SESSION['userName'] . ");"

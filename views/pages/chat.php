@@ -1,4 +1,20 @@
-<?PHP $userName = $_SESSION["userName"] ?>
+<?PHP
+
+$query = "SELECT users.id, users.username FROM user_matches LEFT JOIN users ON user_matches.matchedId=users.id WHERE user_matches.userId=:userId;";
+$db = Db::getConnect()->getInstance();
+$query_find = $db->prepare($query);
+$query_find->execute(array('userId' => $_SESSION["logged_on_user"]));
+$matches = $query_find->fetchAll();
+
+$userName = $_SESSION["userName"];
+$html = "";
+
+foreach ($matches as $match)
+{
+	$html .= "<input id='match' name='match' type=\"radio\" value=\"$match[1]\" onclick=\"loadMessages();\">$match[1]</input>";
+}
+
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <HEAD>
@@ -31,6 +47,10 @@
 <NOSCRIPT>
 	Your browser does not support JavaScript!!
 </NOSCRIPT>
+<?PHP
+	echo $html;
+?>
+<!--<input type="button" name="chat" value="Chat" onclick="sendMessage();">-->
 <br/>
 <TABLE id="content" align="center">
 	<TR>
@@ -41,6 +61,7 @@
 	</TR>
 </TABLE>
 <div align="center">
+
 	<input type="text" value="<?PHP echo $userName ?>" id="userName" style="display: none;" />
 	<input type="text" id="messageBox" maxlength="2000" size="50" onkeydown="handleKey(event)"/>
 	<input type="button" value="Send" onclick="sendMessage();" />

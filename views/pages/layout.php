@@ -7,6 +7,7 @@
 	<TITLE>Matcha</TITLE>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<SCRIPT type="text/javascript" src="js/chat.js"></SCRIPT>
 </HEAD>
 <BODY>
 <HEADER>
@@ -23,7 +24,7 @@
 		{
 	?>
 			<a href="index.php?controller=pages&action=home">Home</a>
-			<a href="index.php?controller=pages&action=chat">Chat</a>
+			<a href="index.php?controller=pages&action=matches">Matches</a>
 			<a href="index.php?controller=validate&action=logout">Sign Out</a>
 	<?PHP
 		}

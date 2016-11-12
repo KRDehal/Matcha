@@ -10,6 +10,10 @@ Class PagesController
 	{
 		require_once('views/pages/landing.php');
 	}
+	public function matches()
+	{
+		require_once('views/pages/matches.php');
+	}
 	public function chat()
 	{
 		require_once('views/pages/chat.php');

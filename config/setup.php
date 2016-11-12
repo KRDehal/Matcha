@@ -76,8 +76,8 @@ $conn->query($pdo_table_create);
 
 $pdo_table_create = "CREATE TABLE IF NOT EXISTS user_chats(
 					id INT AUTO_INCREMENT NOT NULL,
-                    chatId INT NOT NULL,
                     username VARCHAR(250) NOT NULL,
+                    matchName VARCHAR(250) NOT NULL,
                     postedOn DATETIME NOT NULL,
                     message TEXT NOT NULL,
                     PRIMARY KEY (id)
@@ -87,10 +87,21 @@ $conn->query($pdo_db_create);
 $conn->query("USE $DB_NAME");
 $conn->query($pdo_table_create);
 
-$pdo_table_create = "CREATE TABLE IF NOT EXISTS likes(
+$pdo_table_create = "CREATE TABLE IF NOT EXISTS user_likes(
 					id INT AUTO_INCREMENT NOT NULL,
 					userId INT NOT NULL,
 					likedId INT NOT NULL,
+					PRIMARY KEY (id)
+					);";
+
+$conn->query($pdo_db_create);
+$conn->query("USE $DB_NAME");
+$conn->query($pdo_table_create);
+
+$pdo_table_create = "CREATE TABLE IF NOT EXISTS user_matches(
+					id INT AUTO_INCREMENT NOT NULL,
+					userId INT NOT NULL,
+					matchedId INT NOT NULL,
 					PRIMARY KEY (id)
 					);";
 
